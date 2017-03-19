@@ -1,0 +1,29 @@
+<div ng-init="init()">
+
+	<div class="container">
+	  	<h2 class="title">Search History</h2>
+	  	<h2 ng-show="historySearches.length>0" class="clearButton">
+	  		<button type="button" ng-click="clearHistory()" class="btn btn-default" aria-label="Left Align">Clear history
+		  		<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+			</button>
+		</h2>
+	  	<table class="table">
+	    	<thead>
+	      	<tr>
+	        	<th>Search Term</th>
+	        	<th>Service</th>
+	        	<th>Date</th>
+	        	<th>Results (#)</th>
+	      	</tr>
+	    	</thead>
+	    	<tbody>
+	      		<tr ng-repeat="s in historySearches">
+			        <td>{{s.searchTerm}}</td>
+			        <td>{{s.type}}</td>
+			        <td>{{s.date}}</td>
+			        <td>{{s.resLength}}</td>
+			    </tr>
+			</tbody>
+		</table>
+	</div>
+</div>

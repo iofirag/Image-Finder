@@ -1,0 +1,30 @@
+<div ng-init="init()">
+	
+	<div class="row searchWrapper">
+	  <div class="col-lg-6">
+	    <div class="input-group">
+	      <input type="text" class="form-control SearchBar" placeholder="Search for..." ng-model="searchTerm" ng-keypress="keyPressed($event)">
+	      <span class="input-group-btn">
+	        <button class="btn btn-defaul SearchButton" type="button" ng-click="fetchImages()">
+	            <span class=" glyphicon glyphicon-search SearchIcon" ></span>
+	        </button>
+	      </span>
+	    </div>
+	  </div>
+	  <div class="col-md-1 col-md-offset-1">
+		<i ng-show="showLoadSpinner" class="fa fa-circle-o-notch fa-spin" style="font-size:40px"></i>
+	  </div>
+	</div>
+
+
+	<div class="row">
+	  <div class="col-md-2" ng-repeat="pic in pictures">
+	    <div class="thumbnail">
+	      <a href="{{pic._showUrl}}" target="_blank">
+	        <img ng-src="{{pic._source}}" style="height:100px;" alt="Lights">
+	      </a>
+	    </div>
+	  </div>
+	</div>
+
+</div>
