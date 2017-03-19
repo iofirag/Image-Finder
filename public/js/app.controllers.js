@@ -102,7 +102,7 @@ app.controller('imageFinderCtrl', function($scope, $http, flickrFactory, userSer
     	}
     	$scope.showLoadSpinner -= 1
     	userService.saveToSearchList($scope.searchTerm, type, Date.now(), picData.length)
-    	$scope.pictures = picData.concat($scope.pictures)
+    	$scope.pictures = $scope.pictures.concat(picData)
     	$scope.$apply()
     }
     function Image(showUrl, source, title) {    	
